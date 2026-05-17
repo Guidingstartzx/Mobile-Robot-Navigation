@@ -1,0 +1,25 @@
+devel/
+logs/
+log/
+install/
+build/
+bin/
+lib/
+build_isolated/
+devel_isolated/
+
+
+
+__pycache__/
+.claude/
+doc/.obsidian/
+.vscode/
+
+
+# Catkin custom files
+CATKIN_IGNORE
+.DS_Store
+
+
+# qcreator stuff
+CMakeLists.txt.user
