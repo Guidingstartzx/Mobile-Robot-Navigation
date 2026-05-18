@@ -23,7 +23,7 @@ def generate_launch_description():
     nav2_bringup_dir = get_package_share_directory('nav2_bringup')
     
     # 我们为阿克曼小车定制的 Nav2 参数文件路径
-    nav2_ackerman_params_path = os.path.join(get_package_share_directory(package_name), 'config', 'nav2_ackerman_params.yaml')
+    nav2_ackerman_params_rpp_path = os.path.join(get_package_share_directory(package_name), 'config', 'nav2_ackerman_params_rpp.yaml')
 
     # 2. 解析机器人 Xacro 描述
     robot_description = ParameterValue(
@@ -84,7 +84,7 @@ def generate_launch_description():
             PythonLaunchDescriptionSource(os.path.join(nav2_bringup_dir, 'launch', 'navigation_launch.py')),
             launch_arguments={
                 'use_sim_time': 'true',
-                'params_file': nav2_ackerman_params_path  # 加载修改过速度和转弯半径的配置文件
+                'params_file': nav2_ackerman_params_rpp_path  # 加载修改过速度和转弯半径的配置文件
             }.items()
         ),
 
