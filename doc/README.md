@@ -9,7 +9,7 @@ ros2 run four_wheel_car keyboard_teleop
 
 # Navigation
 ### Ackerman
-- RPP: ros2 launch four_wheel_car nav_ackerman.launch.py 
+- RPP: ros2 launch four_wheel_car nav_ackerman_rpp.launch.py 
 - TEB: ros2 launch four_wheel_car nav_ackerman_teb.launch.py
 
 ### Mecanum

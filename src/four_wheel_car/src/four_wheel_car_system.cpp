@@ -379,6 +379,7 @@ private:
     data[0] = torque;
   }
 
+  // 转向机构PD控制
   void ApplySteeringPd(JointHandle & handle, gz::sim::EntityComponentManager & ecm) const
   {
     const double position = this->JointPosition(handle, ecm);
@@ -392,6 +393,7 @@ private:
     this->ApplyForce(handle, torque, ecm);
   }
 
+  // 驱动机构PD控制
   void ApplyDrivePd(JointHandle & handle, gz::sim::EntityComponentManager & ecm) const
   {
     const double position = WrapToPi(this->JointPosition(handle, ecm));

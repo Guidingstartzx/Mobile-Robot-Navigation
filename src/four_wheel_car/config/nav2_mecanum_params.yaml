@@ -145,12 +145,10 @@ controller_server:
       min_vel_y: -0.5
       max_vel_x: 0.5
       max_vel_y: 0.5
-      max_vel_theta: 1.0    # 1.0
+      max_vel_theta: 1.0
       min_speed_xy: 0.0
-      max_speed_xy: 0.707   # 0.26
+      max_speed_xy: 0.707
       min_speed_theta: 0.0
-      # Add high threshold velocity for turtlebot 3 issue.
-      # https://github.com/ROBOTIS-GIT/turtlebot3_simulations/issues/75
       acc_lim_x: 1.0
       acc_lim_y: 1.0
       acc_lim_theta: 1.5
@@ -286,7 +284,7 @@ planner_server:
       # use_astar: false
       # allow_unknown: true
 
-      plugin: "nav2_smac_planner/SmacPlanner2D"  # 专为能原地打转的底盘设计的 2D A*
+      plugin: "nav2_smac_planner/SmacPlanner2D"
       tolerance: 0.25
       allow_unknown: true
 

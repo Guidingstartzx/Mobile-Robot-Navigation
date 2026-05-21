@@ -141,20 +141,17 @@ controller_server:
     FollowPath:
       plugin: "teb_local_planner::TebLocalPlannerROS"
       
-      # --- 基础优化参数 ---
       dt_ref: 0.3                    # 离散轨迹点的时间间隔
       dt_hysteresis: 0.1
       max_global_plan_lookahead_dist: 3.0
-      global_plan_viapoint_sep: 0.5  # 【新增】将 -1.0 改为 0.5，让 TEB 更贴合全局路径，减少乱拐弯导致的不可行
+      global_plan_viapoint_sep: 0.5
       
-      # --- 运动学与速度限制 ---
-      max_vel_x: 1.5                 # 【修改】最高降到 1.5~2.0 左右，匹配 3x3 米的局部代价地图
-      max_vel_x_backwards: 0.5       # 倒车速度不宜过快，0.5 足够揉库了
-      max_vel_theta: 1.5             # 阿克曼车辆角速度受线速度和转弯半径制约，不用设太大
-      acc_lim_x: 1.5                 # 保持不错的起步推背感
-      acc_lim_theta: 1.5             # 【修复拼写错误】修复了原来的 acc_lim_t heta
+      max_vel_x: 1.5                 # 匹配 6x6 米的局部代价地图
+      max_vel_x_backwards: 0.5       # 倒车速度
+      max_vel_theta: 1.5             # 阿克曼车辆角速度受线速度和转弯半径制约
+      acc_lim_x: 1.5
+      acc_lim_theta: 1.5
       
-      # --- 阿克曼底盘几何约束（极其重要） ---
       min_turning_radius: 0.85       # 最小转弯半径
       wheelbase: 0.56                # 轴距
       cmd_angle_instead_rotvel: False 
